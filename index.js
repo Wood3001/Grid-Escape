@@ -5,7 +5,7 @@ var $snap = $("#snap"),
     $container = $("#container"),
     gridWidth = 100,
     gridHeight = 100,
-    gridSize = 5,
+    gridSize = 6,
     gridRows = gridSize,
     gridColumns = gridSize,
     i, j, x, y;
@@ -25,7 +25,7 @@ gsap.set($container, {
     width: gridColumns * gridWidth + 8
 });
 
-////////////////////////BLUE BOXES///////////////////////
+////////////////////////BOXES///////////////////////
 
 // populate the grid with blue boxes, minus the bottom 2 rows
 // give each box a common class and a unique, sequential id
@@ -51,8 +51,17 @@ for (j = 0; j < (gridRows - (gridRows - 1)) * (gridColumns - 2); j++) {
     $("<div/>", {class: "box", id: "box" + [j + (gridColumns * (gridRows - 2) + (gridColumns - 2))]}).css({width: gridWidth - 1, height: gridHeight - 1, top: y, left: x}).appendTo($container);
 }
 
+// declare a variable that represents a randomly generated box id tag
+var randomBox1 = "#box" + Math.floor((Math.random() * ((gridRows * gridColumns)-15))+1);
+var randomBox2 = "#box" + Math.floor((Math.random() * ((gridRows * gridColumns)-15))+11);
+
+// add the block-box class to a randomly selected box instance
+$(randomBox1).addClass("block-box");
+$(randomBox2).addClass("block-box");
+
 //declare a variable representing the .box class
 var boxes = document.querySelectorAll(".box");
+var blockBoxes = document.querySelectorAll(".block-box");
 
 // set the size of the boxes in relation to the grid
 gsap.set(boxes, {
@@ -177,6 +186,12 @@ function update() {
             y: function (endValue) {
                 return Math.round(endValue / gridHeight) * gridHeight;
             }}
-        })}
+        })
+
+    Draggable.create(".block-box", {
+        dragResistance: 1,
+        })
+        
+    }
 
 update();

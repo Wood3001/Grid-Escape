@@ -68,6 +68,14 @@ h1 {
     z-index: 1;
 }
 
+.block-box {
+    position: absolute;
+    border-radius: 10px;
+    background-image: url(images/rect2_1.svg);
+    background-color: #565656;
+    z-index: 1;
+}
+
 .exit { 
     position:absolute;
     margin: auto;
