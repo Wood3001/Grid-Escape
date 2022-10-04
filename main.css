@@ -46,6 +46,12 @@ h1 {
     /* box-shadow: 5px 5px 35px; */
 }
 
+.cell {
+    position: absolute;
+    border: 1px solid #fff;
+    background-color: #ddd;
+}
+
 .player {
     position: absolute;
     border-radius: 15px;
