@@ -37,13 +37,13 @@ h1 {
 }
   
 #container {
+    margin: auto;
     overflow:hidden; 
     padding:0; 
     position:absolute;
-    margin-top: 60px;
+    margin-top: 180px;
     border: 5px solid #fff;
-    border-radius: 12px;
-    /* box-shadow: 5px 5px 35px; */
+    border-radius: 1%;
 }
 
 .cell {
@@ -54,7 +54,7 @@ h1 {
 
 .player {
     position: absolute;
-    border-radius: 15px;
+    border-radius: 15%;
     background-image: url(images/rect1.svg);
     background-color: #ffa200;
     z-index: 2;
@@ -62,7 +62,7 @@ h1 {
   
 .box {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 10%;
     background-image: url(images/rect2_1.svg);
     background-color: #000dff;
     z-index: 1;
@@ -70,7 +70,7 @@ h1 {
 
 .block-box {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 10%;
     background-image: url(images/rect2_1.svg);
     background-color: #565656;
     z-index: 1;
@@ -78,17 +78,15 @@ h1 {
 
 .exit { 
     position:absolute;
-    margin: auto;
-    left: 12px;
+    left: 2%;
     z-index: 1000;
     margin-top: 33px;
-    /* transform: rotate(-90deg); */
 }
 
 h2 {
     font-family:'Space Mono', monospace;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 16px;
     user-select: none;
     color: #fff;
     user-select: none;
@@ -98,7 +96,6 @@ h2 {
     position: absolute;
     height: 100%;
     display: flex;
-    /* align-items: flex-end; */
     padding: 25px;
 }
 

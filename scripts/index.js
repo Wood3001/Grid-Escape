@@ -2,13 +2,16 @@
 gsap.registerPlugin(InertiaPlugin);
 // Declare variables to store the grid dimensions
 var $snap = $("#snap"),
+    $wWidth = $(window).width(),
     $container = $("#container"),
-    gridWidth = 100,
-    gridHeight = 100,
     gridSize = 6,
+    gridWidth = Math.min(($wWidth / (gridSize + 1)), 100),
+    gridHeight = Math.min(($wWidth / (gridSize + 1)), 100),
     gridRows = gridSize,
     gridColumns = gridSize,
     i, j, x, y;
+
+    console.log($wWidth);
 
 ////////////////////////GRID///////////////////////
 
