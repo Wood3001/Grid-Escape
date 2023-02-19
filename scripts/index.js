@@ -2,7 +2,8 @@
 gsap.registerPlugin(InertiaPlugin);
 // Declare variables to store the grid dimensions
 var $snap = $("#snap"),
-    $wWidth = $(window).width(),
+    // $wWidth = $(window).width(),
+    $wWidth = 686,
     $container = $("#container"),
     gridSize = 6,
     gridWidth = Math.min(($wWidth / (gridSize + 1)), 100),
@@ -112,9 +113,9 @@ function checkIfEmpty() {
 // animates the 'instructions' text from 1 to 0 opacity
 // animates the 'reset' button from 0 to 1 opacity after a 2 second delay
 function youWon() {
-    $(".you-win").css("z-index", 1050);
-    gsap.to(".you-win", {opacity: 1, duration: 3});
-    gsap.to(".instructions", {opacity: 0, duration: 3});
+    $("#you-win").css("z-index", 1050);
+    gsap.to("#you-win", {opacity: 1, duration: 3});
+    gsap.to("#instructions", {opacity: 0, duration: 3});
     gsap.to("#reset", {opacity: 1, delay: 2, duration: 2});
 }
 

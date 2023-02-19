@@ -1,17 +1,35 @@
 body {
-    display: flex;
+    display: block;
+    width: 100%;
     background-color:#fff;
-    justify-content: space-around;
 }
 
-.you-win {
+header {
+    height: 6rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #000dff;
+}
+
+.head-txt {
+
+}
+
+#grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1rem 20rem 1fr 20rem 1rem;
+    grid-template-rows: 1rem 50rem 1fr 1rem;
+}
+
+#you-win {
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: #fff;
     color: #0062ff;
     opacity: 0;
@@ -23,9 +41,19 @@ h1 {
     font-weight: 700;
     font-size: 50px;
     user-select: none;
+    color: #fff;
+}
+
+h3 {
+    font-family:'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 50px;
+    user-select: none;
+    color: #0062ff;
 }
 
 #reset {
+    max-width: 100vh;
     align-items: center;
     justify-content: center;
     background-color: #fff;
@@ -35,13 +63,19 @@ h1 {
     opacity: 0;
     z-index: 1500;
 }
+
+#game-wrapper {
+    position: relative;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: center;
+}
   
 #container {
-    margin: auto;
     overflow:hidden; 
     padding:0; 
     position:absolute;
-    margin-top: 180px;
     border: 5px solid #fff;
     border-radius: 1%;
 }
@@ -55,7 +89,7 @@ h1 {
 .player {
     position: absolute;
     border-radius: 15%;
-    background-image: url(images/rect1.svg);
+    background-image: url(../images/rect1.svg);
     background-color: #ffa200;
     z-index: 2;
 }
@@ -63,7 +97,7 @@ h1 {
 .box {
     position: absolute;
     border-radius: 10%;
-    background-image: url(images/rect2_1.svg);
+    background-image: url(../images/rect2_1.svg);
     background-color: #000dff;
     z-index: 1;
 }
@@ -71,7 +105,7 @@ h1 {
 .block-box {
     position: absolute;
     border-radius: 10%;
-    background-image: url(images/rect2_1.svg);
+    background-image: url(../images/rect2_1.svg);
     background-color: #565656;
     z-index: 1;
 }
@@ -92,11 +126,8 @@ h2 {
     user-select: none;
 }
 
-.instructions {
-    position: absolute;
-    height: 100%;
-    display: flex;
-    padding: 25px;
+#instructions {
+
 }
 
 p {
@@ -106,4 +137,21 @@ p {
     user-select: none;
     color: #0062ff;
     user-select: none;
+}
+
+@media screen and (min-width:610px) {
+
+    #grid-container {
+        grid-template-columns: 1rem 20rem 1fr 20rem 1rem;
+        grid-template-rows: 1rem 50rem 1fr 1rem;
+    }
+
+    #game-wrapper {
+        grid-column: 3 / span 1;
+    }
+
+    #instructions {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+    }   
 }
