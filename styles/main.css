@@ -2,13 +2,14 @@ body {
     display: block;
     width: 100%;
     background-color:#fff;
+    overflow: hidden;
 }
 
 header {
     height: 6rem;
     width: 100%;
     padding: 1rem;
-    background-color: #000dff;
+    background-color: #585ff1;
 }
 
 .head-txt {
@@ -18,8 +19,8 @@ header {
 #grid-container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1rem 20rem 1fr 20rem 1rem;
-    grid-template-rows: 1rem 50rem 1fr 1rem;
+    grid-template-columns: 1rem 1fr 1rem;
+    grid-template-rows: 1rem 40rem 1fr 1rem;
 }
 
 #you-win {
@@ -39,7 +40,7 @@ header {
 h1 {
     font-family:'Space Mono', monospace;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 30px;
     user-select: none;
     color: #fff;
 }
@@ -66,7 +67,7 @@ h3 {
 
 #game-wrapper {
     position: relative;
-    grid-column: 3 / span 1;
+    grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     display: flex;
     justify-content: center;
@@ -127,7 +128,10 @@ h2 {
 }
 
 #instructions {
-
+    grid-column: 2 / span 3;
+    grid-row: 3 / span 1;
+    max-width: 36rem;
+    justify-self: center;
 }
 
 p {
@@ -139,10 +143,14 @@ p {
     user-select: none;
 }
 
-@media screen and (min-width:610px) {
+@media screen and (min-width:768px) {
+
+    h1 {
+        font-size: 50px;
+    }
 
     #grid-container {
-        grid-template-columns: 1rem 20rem 1fr 20rem 1rem;
+        grid-template-columns: 1rem 1fr 40rem 1fr 1rem;
         grid-template-rows: 1rem 50rem 1fr 1rem;
     }
 
