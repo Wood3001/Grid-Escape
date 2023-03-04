@@ -41,7 +41,7 @@ header {
 h1 {
     font-family:'Space Mono', monospace;
     font-weight: 700;
-    font-size: 46px;
+    font-size: 48px;
     user-select: none;
     color: #fff;
 }
@@ -167,7 +167,7 @@ p {
 
     #grid-container {
         grid-template-columns: 1rem 1fr 40rem 1fr 1rem;
-        grid-template-rows: 1rem 36.5rem 1fr 1rem;
+        grid-template-rows: 1rem 36.75rem 1fr 1rem;
     }
 
     #game-wrapper {
@@ -180,4 +180,17 @@ p {
         grid-row: 2 / span 1;
         justify-self: right;
     }   
+}
+
+@media screen and (min-width:1200px) {
+
+    header {
+        display: grid;
+    }
+
+    .logo-wrap {
+        min-width: 1280px;
+        justify-self: center;
+    }
+    
 }
