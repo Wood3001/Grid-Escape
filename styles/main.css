@@ -21,7 +21,7 @@ header {
     display: grid;
     height: 100vh;
     grid-template-columns: 1rem 1fr 1rem;
-    grid-template-rows: 1rem 28rem 1fr 1rem;
+    grid-template-rows: 1rem 28rem 6rem 1rem;
 }
 
 #you-win {
@@ -41,7 +41,7 @@ header {
 h1 {
     font-family:'Space Mono', monospace;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 46px;
     user-select: none;
     color: #fff;
 }
@@ -115,7 +115,7 @@ h3 {
 
 .exit { 
     position:absolute;
-    left: 2%;
+    left: 4%;
     z-index: 1000;
     margin-top: 33px;
 }
@@ -123,18 +123,24 @@ h3 {
 h2 {
     font-family:'Space Mono', monospace;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     user-select: none;
     color: #fff;
     user-select: none;
 }
 
 #instructions {
-    grid-column: 2 / span 3;
+    position: relative;
+    grid-column: 2 / span 1;
     grid-row: 3 / span 1;
-    max-width: 36rem;
-    justify-self: center;
+    max-width: 20rem;
     padding: 1rem;
+    /* height: 90px; */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0062ff;
+    margin-top: 5px;
+    justify-self: center;
 }
 
 p {
@@ -151,7 +157,6 @@ p {
     #game-wrapper {
         transform: scale(0.4);
     }
-
 }
 
 @media screen and (min-width:768px) {
@@ -160,13 +165,9 @@ p {
         justify-content: left;
     }
 
-    h1 {
-        font-size: 50px;
-    }
-
     #grid-container {
         grid-template-columns: 1rem 1fr 40rem 1fr 1rem;
-        grid-template-rows: 1rem 50rem 1fr 1rem;
+        grid-template-rows: 1rem 36.5rem 1fr 1rem;
     }
 
     #game-wrapper {
@@ -177,5 +178,6 @@ p {
     #instructions {
         grid-column: 2 / span 1;
         grid-row: 2 / span 1;
+        justify-self: right;
     }   
 }
