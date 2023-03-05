@@ -1,6 +1,10 @@
 body {
     display: block;
     width: 100%;
+    height: 100%;
+    background-image: url(../images/wavebg.svg);
+    background-size: cover;
+    background-repeat: repeat;
     background-color:#fff;
     overflow: hidden;
 }
@@ -19,9 +23,9 @@ header {
 
 #grid-container {
     display: grid;
-    height: 100vh;
+    /* height: 100vh; */
     grid-template-columns: 1rem 1fr 1rem;
-    grid-template-rows: 1rem 28rem 6rem 1rem;
+    grid-template-rows: 1rem 0fr 1rem 1fr 18rem 1fr 1rem;
 }
 
 #you-win {
@@ -52,6 +56,7 @@ h3 {
     font-size: 50px;
     user-select: none;
     color: #0062ff;
+    line-height: 1.75;
 }
 
 #reset {
@@ -67,20 +72,20 @@ h3 {
 }
 
 #game-wrapper {
-    position: relative;
     grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 4 / span 1;
     display: flex;
     justify-content: center;
     transform: scale(0.55);
+    background-color: #fff;
 }
   
 #container {
+    align-items: flex-start;
     overflow:hidden; 
     padding:0; 
     position:absolute;
     border: 5px solid #fff;
-    border-radius: 1%;
 }
 
 .cell {
@@ -132,14 +137,27 @@ h2 {
 #instructions {
     position: relative;
     grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
+    grid-row: 2 / span 1;
     max-width: 20rem;
+    max-height: 10rem;
     padding: 1rem;
-    /* height: 90px; */
+    background-color: #fff;
     border-style: solid;
     border-width: 2px;
-    border-color: #0062ff;
-    margin-top: 5px;
+    border-color: #585ff1;
+    justify-self: center;
+}
+
+#sidebar-r {
+    position: relative;
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+    width: 20rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #585ff1;
     justify-self: center;
 }
 
@@ -150,6 +168,11 @@ p {
     user-select: none;
     color: #0062ff;
     user-select: none;
+    line-height: 1.35;
+}
+
+.small-type {
+    font-size: 10px;
 }
 
 @media screen and (max-width:320px) {
@@ -166,20 +189,37 @@ p {
     }
 
     #grid-container {
-        grid-template-columns: 1rem 1fr 40rem 1fr 1rem;
-        grid-template-rows: 1rem 36.75rem 1fr 1rem;
+        grid-template-columns: 1rem 1fr 1rem 1fr 1rem 1fr 1rem;
+        grid-template-rows: 1rem 600px 1fr 1rem;
     }
 
     #game-wrapper {
-        grid-column: 3 / span 1;
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 1;
         transform: scale(1);
+        width: 600px;
+        height: 600px;
+        overflow: hidden;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #585ff1;
+        justify-self: center;
     }
 
     #instructions {
         grid-column: 2 / span 1;
         grid-row: 2 / span 1;
         justify-self: right;
+        max-height: none;
     }   
+
+    #sidebar-r {
+        display: flex;
+        align-items: flex-end;
+        grid-column: 6 / span 1;
+        grid-row: 2 / span 1;
+        justify-self: left;
+    }
 }
 
 @media screen and (min-width:1200px) {
