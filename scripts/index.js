@@ -1,11 +1,11 @@
 //execute the function once the page has finished loading
-$(document).ready(function(){
+$(window).on("load", function(){
 
     ///////////////// LOADER //////////////////////////
-
-    $(".loader").slideUp('slow', function(){
-        $(".loader").addClass("hide");
-    });
+    $('*.svg').load
+        $(".loader").slideUp('slow', function(){
+            $(".loader").addClass("hide");
+        });
 
 });
 
