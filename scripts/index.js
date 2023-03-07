@@ -1,3 +1,14 @@
+//execute the function once the page has finished loading
+$(document).ready(function(){
+
+    ///////////////// LOADER //////////////////////////
+
+    $(".loader").slideUp('slow', function(){
+        $(".loader").addClass("hide");
+    });
+
+});
+
 // initialize GSAP Inertia plugin
 gsap.registerPlugin(InertiaPlugin);
 // Declare variables to store the grid dimensions

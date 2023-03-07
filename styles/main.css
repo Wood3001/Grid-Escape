@@ -18,6 +18,40 @@ header {
     justify-content: center;
 }
 
+/* ////////////////// LOADER ///////////////////// */
+
+.loader {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 10000001;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-anim {
+    border: 16px solid #0062ff;;
+    border-top: 16px solid #ffa200;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hide {
+    display: none;
+}
+
+/* ////////////////// GAME BOARD ///////////////////// */
+
 #grid-container {
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
