@@ -4,11 +4,12 @@ body {
     background-repeat: repeat;
     background-color:#fff;
     overflow: hidden;
+    width: 100vw;
 }
 
 header {
     height: 6rem;
-    width: 100%;
+    width: 100vw;
     padding: 1rem;
     background-color: #585ff1;
 }
@@ -52,7 +53,14 @@ header {
 
 /* ////////////////// GAME BOARD ///////////////////// */
 
+#flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #grid-container {
+    max-width: fit-content;
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
     grid-template-rows: 1rem 0fr 0rem 1fr 17rem 1fr 1rem;
@@ -215,12 +223,39 @@ p {
 
 @media screen and (min-width:768px) {
 
+    #grid-container {
+        max-width: unset;
+        width: 100%;
+        grid-template-columns: 1fr 38rem 1fr;
+        grid-template-rows: 2rem 0fr 1rem 10rem 23rem 1fr 2rem;
+    }
+
+    #game-wrapper {
+        transform: scale(1);
+    }
+
+    #instructions {
+        max-width: unset;
+    }
+
+    #sidebar-r {
+        grid-row: 7 / span 1;
+        width: 98%;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+}
+
+@media screen and (min-width:1200px) {
+
     .head-txt {
         justify-content: left;
     }
 
     #grid-container {
-        grid-template-columns: 1rem 1fr 1rem 1fr 1rem 1fr 1rem;
+        grid-template-columns: 1rem 1fr 1rem 600px 1rem 1fr 1rem;
         grid-template-rows: 1rem 600px 1fr 1rem;
     }
 
@@ -242,6 +277,7 @@ p {
         grid-row: 2 / span 1;
         justify-self: right;
         max-height: none;
+        max-width: 20rem;
     }   
 
     #sidebar-r {
@@ -251,10 +287,8 @@ p {
         grid-row: 2 / span 1;
         justify-self: left;
         height: unset;
+        max-width: 20rem;
     }
-}
-
-@media screen and (min-width:1200px) {
 
     header {
         display: grid;
